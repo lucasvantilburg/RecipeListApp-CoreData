@@ -20,6 +20,7 @@
 		BE6CB19B25C2B27B008012ED /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6CB19A25C2B27B008012ED /* RecipeDetailView.swift */; };
 		BEB1BE0F2683534C00A796A5 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1BE0E2683534C00A796A5 /* Ingredient.swift */; };
 		BEFC847826848B3200C7919C /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC847726848B3200C7919C /* Rational.swift */; };
+		BEFC847A26849BA300C7919C /* RecipeHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC847926849BA300C7919C /* RecipeHighlights.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BE6CB19A25C2B27B008012ED /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		BEB1BE0E2683534C00A796A5 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		BEFC847726848B3200C7919C /* Rational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
+		BEFC847926849BA300C7919C /* RecipeHighlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHighlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				BE28FC4825D8A7A600AEC355 /* RecipeFeaturedView.swift */,
 				BE6310D725C1780F002C2649 /* RecipeListView.swift */,
 				BE6CB19A25C2B27B008012ED /* RecipeDetailView.swift */,
+				BEFC847926849BA300C7919C /* RecipeHighlights.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				BEB1BE0F2683534C00A796A5 /* Ingredient.swift in Sources */,
 				BE6310F525C17AEF002C2649 /* RecipeModel.swift in Sources */,
 				BE6310D825C1780F002C2649 /* RecipeListView.swift in Sources */,
+				BEFC847A26849BA300C7919C /* RecipeHighlights.swift in Sources */,
 				BE6310D625C1780F002C2649 /* Recipe_List_App.swift in Sources */,
 				BE6310F925C17D68002C2649 /* DataService.swift in Sources */,
 				BEFC847826848B3200C7919C /* Rational.swift in Sources */,
