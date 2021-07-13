@@ -20,43 +20,43 @@ class RecipeModel:ObservableObject {
     static func getPortion(ingredient:Ingredient, recipeServings:Int, targetServings:Int) -> String {
         
         var portion = ""
-        var numerator = ingredient.num ?? 1
-        var denominator = ingredient.denom ?? 1
+        var numerator = ingredient.num
+        var denominator = ingredient.denom
         var wholeParts = 0
         
-        if (ingredient.num != nil) {
+        
             
-            //Get a single serving size
-            denominator *= recipeServings
+        //Get a single serving size
+        denominator *= recipeServings
+        
+        //Get target portion
+        numerator *= targetServings
+        
+        //Reduce fraction by GCD
+        let divisor = Rational.greatestCommonDivisor(numerator, denominator)
+        
+        numerator /= divisor
+        denominator /= divisor
+        
+        //Get whole portion if num > den
+        if (numerator >= denominator) {
+            wholeParts = numerator / denominator
+            numerator = numerator % denominator
             
-            //Get target portion
-            numerator *= targetServings
-            
-            //Reduce fraction by GCD
-            let divisor = Rational.greatestCommonDivisor(numerator, denominator)
-            
-            numerator /= divisor
-            denominator /= divisor
-            
-            //Get whole portion if num > den
-            if (numerator >= denominator) {
-                wholeParts = numerator / denominator
-                numerator = numerator % denominator
-                
-                //Append to string
-                portion += String(wholeParts)
-            }
-            
-            //Express remainder as fraction
-            if (numerator > 0) {
-                
-                //Add space if there are whole portions
-                portion += wholeParts > 0 ? " ": ""
-                
-                //append remainder as fraction to string
-                portion += "\(numerator)/\(denominator)"
-            }
+            //Append to string
+            portion += String(wholeParts)
         }
+        
+        //Express remainder as fraction
+        if (numerator > 0) {
+            
+            //Add space if there are whole portions
+            portion += wholeParts > 0 ? " ": ""
+            
+            //append remainder as fraction to string
+            portion += "\(numerator)/\(denominator)"
+        }
+        
         
         if var unit = ingredient.unit {
             //calculate appropriate suffix

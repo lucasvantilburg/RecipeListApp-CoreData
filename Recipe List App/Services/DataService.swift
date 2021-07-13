@@ -11,6 +11,8 @@ class DataService {
     
     static func getLocalData() -> [Recipe] {
         
+        return [Recipe]()
+        /*
         //Parse local json file
         
         //Get a url path to the json file
@@ -66,7 +68,7 @@ class DataService {
         
         
         
-        
+        */
     }
     
 }

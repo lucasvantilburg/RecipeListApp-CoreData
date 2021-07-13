@@ -19,6 +19,12 @@
 		BE6310F925C17D68002C2649 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6310F825C17D68002C2649 /* DataService.swift */; };
 		BE6CB19B25C2B27B008012ED /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6CB19A25C2B27B008012ED /* RecipeDetailView.swift */; };
 		BEB1BE0F2683534C00A796A5 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1BE0E2683534C00A796A5 /* Ingredient.swift */; };
+		BED7B1F8269D5BAE0083B084 /* Recipe Data Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BED7B1F6269D5BAE0083B084 /* Recipe Data Model.xcdatamodeld */; };
+		BED7B205269D5E600083B084 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7B201269D5E600083B084 /* Recipe+CoreDataClass.swift */; };
+		BED7B206269D5E600083B084 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7B202269D5E600083B084 /* Recipe+CoreDataProperties.swift */; };
+		BED7B207269D5E600083B084 /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7B203269D5E600083B084 /* Ingredient+CoreDataClass.swift */; };
+		BED7B208269D5E600083B084 /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7B204269D5E600083B084 /* Ingredient+CoreDataProperties.swift */; };
+		BED7B22A269D630E0083B084 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7B229269D630E0083B084 /* Persistence.swift */; };
 		BEFC847826848B3200C7919C /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC847726848B3200C7919C /* Rational.swift */; };
 		BEFC847A26849BA300C7919C /* RecipeHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFC847926849BA300C7919C /* RecipeHighlights.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +44,12 @@
 		BE6310F825C17D68002C2649 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		BE6CB19A25C2B27B008012ED /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		BEB1BE0E2683534C00A796A5 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		BED7B1F7269D5BAE0083B084 /* Recipe Data Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Recipe Data Model.xcdatamodel"; sourceTree = "<group>"; };
+		BED7B201269D5E600083B084 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BED7B202269D5E600083B084 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BED7B203269D5E600083B084 /* Ingredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BED7B204269D5E600083B084 /* Ingredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BED7B229269D630E0083B084 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BEFC847726848B3200C7919C /* Rational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
 		BEFC847926849BA300C7919C /* RecipeHighlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHighlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +138,13 @@
 		BE6310EA25C17895002C2649 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BED7B229269D630E0083B084 /* Persistence.swift */,
+				BED7B201269D5E600083B084 /* Recipe+CoreDataClass.swift */,
+				BED7B202269D5E600083B084 /* Recipe+CoreDataProperties.swift */,
+				BED7B203269D5E600083B084 /* Ingredient+CoreDataClass.swift */,
+				BED7B204269D5E600083B084 /* Ingredient+CoreDataProperties.swift */,
 				BE6310ED25C17924002C2649 /* recipes.json */,
+				BED7B1F6269D5BAE0083B084 /* Recipe Data Model.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -217,16 +235,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED7B205269D5E600083B084 /* Recipe+CoreDataClass.swift in Sources */,
 				BE6310F225C179A0002C2649 /* Recipe.swift in Sources */,
+				BED7B22A269D630E0083B084 /* Persistence.swift in Sources */,
+				BED7B208269D5E600083B084 /* Ingredient+CoreDataProperties.swift in Sources */,
 				BE6CB19B25C2B27B008012ED /* RecipeDetailView.swift in Sources */,
 				BEB1BE0F2683534C00A796A5 /* Ingredient.swift in Sources */,
 				BE6310F525C17AEF002C2649 /* RecipeModel.swift in Sources */,
 				BE6310D825C1780F002C2649 /* RecipeListView.swift in Sources */,
 				BEFC847A26849BA300C7919C /* RecipeHighlights.swift in Sources */,
+				BED7B206269D5E600083B084 /* Recipe+CoreDataProperties.swift in Sources */,
 				BE6310D625C1780F002C2649 /* Recipe_List_App.swift in Sources */,
 				BE6310F925C17D68002C2649 /* DataService.swift in Sources */,
 				BEFC847826848B3200C7919C /* Rational.swift in Sources */,
+				BED7B1F8269D5BAE0083B084 /* Recipe Data Model.xcdatamodeld in Sources */,
 				BE28FC4925D8A7A600AEC355 /* RecipeFeaturedView.swift in Sources */,
+				BED7B207269D5E600083B084 /* Ingredient+CoreDataClass.swift in Sources */,
 				BE0D579225D6249F004B353C /* RecipeTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +438,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BED7B1F6269D5BAE0083B084 /* Recipe Data Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BED7B1F7269D5BAE0083B084 /* Recipe Data Model.xcdatamodel */,
+			);
+			currentVersion = BED7B1F7269D5BAE0083B084 /* Recipe Data Model.xcdatamodel */;
+			path = "Recipe Data Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE6310CA25C1780F002C2649 /* Project object */;
 }
