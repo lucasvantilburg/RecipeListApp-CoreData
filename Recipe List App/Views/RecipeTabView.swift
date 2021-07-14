@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct RecipeTabView: View {
+    
+    @State private var tabSelection = 0
+    
     var body: some View {
         
-        TabView {
+        TabView (selection: $tabSelection) {
             
             RecipeFeaturedView()
                 .tabItem {
@@ -19,6 +22,7 @@ struct RecipeTabView: View {
                         Text("Featured")
                     }
                 }
+                .tag(0)
             
             RecipeListView()
                 .tabItem {
@@ -27,8 +31,9 @@ struct RecipeTabView: View {
                         Text("Recipe List")
                     }
                 }
+                .tag(1)
             
-            AddRecipeView()
+            AddRecipeView(tabSelection: $tabSelection)
                 .tabItem {
                     VStack {
                         Image(systemName: "plus.circle")
@@ -36,6 +41,7 @@ struct RecipeTabView: View {
                         Text("Add Recipe")
                     }
                 }
+                .tag(2)
             
         }.environmentObject(RecipeModel())
         
