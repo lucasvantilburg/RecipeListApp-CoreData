@@ -11,8 +11,25 @@ struct RecipeListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @EnvironmentObject var model:RecipeModel
-    //@ObservedObject var model = RecipeModel()
+    //@EnvironmentObject var model:RecipeModel
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) private var recipes:FetchedResults<Recipe>
+    
+    @State private var filterBy = ""
+    
+    private var filteredRecipes: [Recipe] {
+        
+        if filterBy.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            //no filter so return all recipes
+            return Array(recipes)
+        }
+        else {
+            //filter by the search term
+            return recipes.filter { r in
+                return r.name.contains(filterBy)
+            }
+        }
+    }
     
     var body: some View {
         
@@ -26,9 +43,12 @@ struct RecipeListView: View {
                     .padding(.top, 40)
                     .font(Font.custom("Avenir Heavy", size: 26))
                 
+                SearchBarView(filterBy: $filterBy)
+                    .padding([.trailing, .bottom])
+                
                 ScrollView {
                     LazyVStack (alignment: .leading) {
-                        ForEach(model.recipes) { r in
+                        ForEach(filteredRecipes) { r in
                             
                             NavigationLink(
                                 destination: RecipeDetailView(recipe:r),
@@ -62,6 +82,10 @@ struct RecipeListView: View {
             }
             .navigationBarHidden(true)
             .padding(.leading)
+            .onTapGesture {
+                //resign first responder - get rid of keyboard from search bar
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
         }
     }
 }
